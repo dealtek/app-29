@@ -1,0 +1,368 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Independent Drivers Consortium Search for a Lab - COLLECTION SITES</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+<!--
+-->
+<link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+<link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+ <script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+
+<link href="mob.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.thinbox {
+	border: thin solid #CCC;
+	/*margin: 4px;*/
+	padding: 4px;
+	width: 133px;
+}
+</style>  
+</head>
+<body>
+
+<div data-role="header" data-position="fixed" data-theme="a">
+
+
+<div class="box1 center1 boxblue" >
+<a href="dashboard.html" rel="external"><img src="pics/appbanner-320x60-home1.png" width="320" height="61" class="center" ></a>
+</div>
+
+
+<!--<h1>Page head Title</h1> -->
+</div><!-- /header -->
+
+<section id="page01111" data-role="page">
+
+
+<div role="main" class="ui-content">
+<div class="content" >
+<div class="box1 center1" >
+  
+      
+<!--INSERT START -->
+
+
+
+<div>
+
+<table border="0" align="center" cellpadding="2" cellspacing="2">
+
+
+
+
+
+<tr>
+<td></td>
+<td >
+
+<!--
+<span class="print_data_16"><strong>You Need A Pre-Employment Drug Test<br>
+To Be An Active  Driver in the IDC.
+
+<br>
+
+<span class="print_data_22_b">Be Sure To Show The Collector Notice To Your Collector.</span>
+
+
+
+</strong></span>
+
+<br>
+
+<a class="buttonlink7" href="client-testing.html" rel="external"> <span class="bigfont2">Collectors Notice</span> </a> 
+<br>
+
+
+<a class="buttonlink2" href="collection-sites1.html" rel="external"> <span class="bigfont2">Drug Testing Collection Sites</span> </a>
+ -->
+
+
+</td>
+<td></td>
+</tr>
+</table>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+ //tmp document.getElementById('type_of_company_number').textContent = localStorage.getItem("type_of_company_number");
+
+
+
+
+//function testResults (form) {
+    //var Client_ID  = form.Client_ID.value;
+	//var webpass = form.webpass.value;
+   // alert ("You typed: " + Client_ID +" " +webpass);
+   
+   //var zip = form.zip.value;
+   //var zip = '91';
+   
+   //
+   
+   //var tocnum = localStorage.getItem("type_of_company_number");
+   //
+   //
+   //var tocnum = "455";
+ 
+	//
+	
+	var Client_ID = localStorage.getItem("Client_ID");
+	
+	//var Client_ID = 25658;
+	
+	var webpass = localStorage.getItem("cl_emp_Drivers_License_No");
+	
+	
+	
+	
+	
+	
+//
+
+//$.get("https://idcapp.com/app-data/random-tests.php?Client_ID="+Client_ID, function(data, status){
+	
+	
+$.post('https://idcapp.com/app-data/random-tests.php', { 	
+		Client_ID: Client_ID, 
+		webpass: webpass
+		
+		},
+function(data, status){		
+	
+	
+	
+	
+//$.get("https://idcapp.com/app-data/collection-sites2.php?tocnum="+tocnum, function(data, status){		
+			//$.get("https://idcapp.com/appjs/a2/clientget-11.php", function(data, status){	
+
+// alert("Data: " + data + "\nStatus: " + status);
+console.log ('data', data);
+output = "";
+
+
+/*
+//<td></td>
+
+"<td class='thinbox'><span class='thinbox9'>" + value.rte_emp_First + "</span></td>" +
+"<td width='200' class='thinbox'><span >" + value.rte_emp_Last + "</span></td>" +  
+
+
+don't need name
+*/
+
+
+ 
+// YO how do i add in the $completecheck I hid inside the loop 
+
+$.each(data, function(key, value) {
+            	console. log ('item', key, value);
+
+//adding in loop	just add 1x
+// fix more later	
+localStorage.setItem("rt_completecheck", value.completecheck);				
+			
+output += "<tr>" + 
+				
+
+"<td class='thinbox'><span class='thinbox9'>" + value.RandomTests_TestRequestDate + "</span></td>" + 
+"<td class='thinbox'><span class='thinbox9'>" + value.TestRequired + "</span></td>" + 
+"<td class='thinbox'><span class='thinbox9'>" + value.rte_Tests_CompleteCheck_Test_Collection_Time + "</span></td>" + 
+"<td class='thinbox'><span class='thinbox9'>" + value.zdb_test_complete_check2 + "</span></td>" + 
+"<td class='thinbox'><span class='thinbox9'>" + value.rte_Tests_CompleteCheck_Test_Date + "</span></td>"
++ "</tr>";
+			});       
+            $('#list').html( output );
+            $('#list').listview( "refresh" );
+
+
+	});
+	
+		
+//}
+</script>
+
+<br><br><br>
+
+RECENT RANDOM TEST LISTINGS<br>
+for <span id="Company"></span><br>
+<br>
+<br>
+ 
+
+
+<!--
+<br>
+111 fsdjfsk 
+th scope="col" -->
+
+<!--
+<table width="900" border="7" cellspacing="2" cellpadding="2">
+
+<tr> 
+<th scope="col"><span class='thinbox'>first</span></td>
+<th scope="col" width="200"><span class='thinbox'>last</span></td>
+<th scope="col"><span class='thinbox'>TestRequestDate</span></td>
+<th scope="col"><span class='thinbox'>Required</span></td>
+<th scope="col"><span class='thinbox'>Collection_Time</span></td>
+<th scope="col"><span class='thinbox'>complete</span></td>
+<th scope="col"><span class='thinbox'>CompleteCheck_Test_Date</span></td>
+
+</tr>
+<tr> 
+<div id="list" data-role="listview"></div>
+
+</tr>
+</table> -->
+
+<div align="center">
+
+<div id="list" data-role="listview"></div>
+</div>
+
+<br><br>
+
+
+<span class="print_data_22_b">
+
+<span id="rtshow"></span>
+
+</span>
+
+
+
+<!--33<br>
+<div id="list" data-role="listview"></div>44
+<br> -->
+<!--
+<div align="left">
+sssssssssss
+
+</div> -->
+
+
+<!--<div data-role="main" class="ui-content">  -->
+
+<!--<div id="list" data-role="listview"></div> -->
+<!--<ul id="list" data-role="listview">
+
+
+</ul>
+ -->
+<!--</div>
+ -->
+
+
+<!--</table> -->
+
+
+
+<!--222 ashjdashdjka
+
+ -->
+
+
+<!--INSERT END -->
+
+</div><!-- end .box -->
+</div><!-- end .content -->
+</div><!-- /ui-content -->
+  
+</section><!-- /page -->
+
+<footer data-role="footer" class="ui-barNAH" data-position="fixed" data-theme="a">
+<div class="ui-grid-c boxblue">
+<!--foot -->
+</div>
+</footer>
+
+
+<!-- /footer -->
+
+
+<!-- code for including header/footer -->
+    <script type="text/javascript">
+      
+      // we're ready, include away
+      $(window).ready(function(){
+        
+        // use easy AJAX jQuery helpers
+        
+		// head no work!!!!
+        // add header.html into <header>
+        $.get("header-inc.html", function(fileData){
+          $('header').html(fileData); 
+        });
+
+        // add footer.html into <footer>
+        $.get("footer-inc.html", function(fileData){
+          $('footer').html(fileData); 
+        });
+       
+	 /*   */	   
+      });
+      
+    </script>
+
+
+
+
+<script>
+
+document.getElementById('Company').textContent = localStorage.getItem("Company");
+
+if (localStorage.getItem("rt_completecheck") == 'yestest'){
+document.getElementById('rtshow').textContent = 'You need a random test.';
+}else{
+document.getElementById('rtshow').textContent = '';
+	}
+
+
+
+
+
+</script>
+
+
+
+
+
+    
+    
+</body>
+</html>
